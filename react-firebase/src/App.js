@@ -1,27 +1,41 @@
 import React, { Component } from 'react'
-import Navigation from './Navigation'
 import firebase from './firebase'
-// import rebass from 'rebass'
-// import styled from 'styled-components'
+import Login from "./Login"
+import Home from "./Home"
 
 class App extends Component {
-  state = {
-    authenticated: false,
+  constructor() {
+    super()
+    this.state = ({
+      user: null,
+    });
+    this.authListener = this.authListener.bind(this);
   }
+
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((authenticated) => {
-      authenticated ?  this.setState(() => ({
-        authenticated: true,
-      }))
-      : this.setState(() => ({
-        authenticated: false,
-      }))
+    this.authListener()
+  }
+
+  authListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ user })
+        localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ user: null })
+        localStorage.removeItem('user')
+      }
     })
   }
 
   render() {
-    return <Navigation authenticated={this.state.authenticated} />
-  }
+    return (
+     <div className="App">
+       {this.state.user ?  (<Home />) : (<Login />)}
+     </div>
+   )
+}
 }
 
-export default App
+ export default App

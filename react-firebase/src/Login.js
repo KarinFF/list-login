@@ -1,56 +1,55 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-// import { Flex, Box, Button, Heading, Text } from 'rebass'
-// import styled from 'styled-components'
 import firebase from './firebase'
 
-class Login extends Component {
-  state = {
-    email: '',
-    password: '',
-    error: null,
-  }
+  class Login extends Component {
+    constructor(props) {
+      super(props);
+      this.login = this.login.bind(this);
+      this.handleChange = this.handleChange.bind(this)
+      this.signup = this.signup.bind(this)
+      this.state = {
+        email: '',
+        password: ''
+      };
+    }
 
-  handleInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value })
-  }
+    handleChange(e) {
+      this.setState({ [e.target.name]: e.target.value })
+    }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { email, password } = this.state
+    login(e) {
+      e.preventDefault();
+      firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+      }).catch((error) => {
+          console.log(error)
+        });
+    }
 
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((user) => {
-        this.props.history.push('/')
-      })
+    signup(e){
+      e.preventDefault();
+      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+      }).then((u)=>{console.log(u)})
       .catch((error) => {
-        this.setState({ error: error })
-      })
+          console.log(error)
+        })
+    }
+    render() {
+      return (
+         <div>
+           <form>
+            <div className="form-group">
+               <label htmlFor="exampleInputEmail1">Email address</label>
+               <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+            </div>
+            <div>
+              <label htmlFor="exampleInputPassword1">Password</label>
+              <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="exampleInputPassword1" placeholder="Password" />
+            </div>
+            <button type="submit" onClick={this.login}>Login</button>
+            <button onClick={this.signup} style={{marginLeft: '25px'}}>Signup, please enter email and password above</button>
+          </form>
+         </div>
+      )
+    }
   }
-  render() {
-    const { email, password, error } = this.state
-    return (
-      <div>
-        <h1>Log In</h1>
-        {error ? (
-              <p>{error.message}</p>
-        ) : null}
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" name="email" placeholder="Email" value={email} onChange={this.handleInputChange} />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={this.handleInputChange}
-              />
-              <button>Log in</button>
-            </form>
-      </div>
-    )
-  }
-}
-
-export default withRouter(Login)
+  export default Login
