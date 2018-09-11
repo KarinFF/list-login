@@ -1,4 +1,4 @@
-import firebase from "firebase"
+import firebase from 'firebase'
 
 // Initialize Firebase
   const config = {
@@ -8,7 +8,8 @@ import firebase from "firebase"
     projectId: "elk-login-4a498",
     storageBucket: "elk-login-4a498.appspot.com",
     messagingSenderId: "630239457802"
-  };
+  }
+
   firebase.initializeApp(config)
 
 export default firebase
