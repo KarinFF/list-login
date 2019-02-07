@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import firebase from './firebase'
+import "./css/login.css"
 
   class Login extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ import firebase from './firebase'
     }
 
     signup(e){
-      e.preventDefault();
+      e.preventDefault()
       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
       }).then((u)=>{console.log(u)})
       .catch((error) => {
@@ -36,18 +37,20 @@ import firebase from './firebase'
     render() {
       return (
          <div>
+           <h2>Welcome to Kakanmonsters admin site</h2>
            <form>
             <div className="form-group">
-               <label htmlFor="exampleInputEmail1">Email address</label>
+               <label htmlFor="exampleInputEmail1">Email address </label>
                <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
             </div>
-            <div>
-              <label htmlFor="exampleInputPassword1">Password</label>
+            <div className="passwords">
+              <label htmlFor="exampleInputPassword1">Password </label>
               <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="exampleInputPassword1" placeholder="Password" />
             </div>
-            <button type="submit" onClick={this.login}>Login</button>
-            <button onClick={this.signup} style={{marginLeft: '25px'}}>Signup, please enter email and password above</button>
+            <button type="submit" onClick={this.login}>I´m already an admin!</button>
+            <button onClick={this.signup} style={{marginLeft: '25px'}}>To signup, please enter email and password above!</button>
           </form>
+          <img src="./img/animal1.jpg" />
          </div>
       )
     }

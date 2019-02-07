@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import firebase from "./firebase"
+import Table from "./Table"
 
 class Home extends Component {
     constructor(props) {
@@ -10,14 +11,13 @@ class Home extends Component {
         firebase.auth().signOut();
     }
 
-    
+
     render() {
         return (
             <div>
-                <h1>Welcome to Home</h1>
-               <button onClick={this.logout}>Logout </button>
-
-
+              <h1>Welcome Admin </h1>
+              <button onClick={this.logout}>Logout </button>
+             <Table/>
             </div>
         )
     }

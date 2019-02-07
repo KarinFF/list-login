@@ -1,0 +1,25 @@
+
+body {
+  background: #36A168;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  color: #194D2C;
+}
+
+form {
+  border: 1px solid black;
+  color: #194D2C;
+  background: #23794b;
+}
+
+.form-group {
+  padding: 5px 0px 5px 0px;
+}
+
+button {
+  background: #9492a9;
+}
