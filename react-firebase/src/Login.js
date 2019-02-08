@@ -22,7 +22,7 @@ import "./css/login.css"
       e.preventDefault();
       firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
       }).catch((error) => {
-          console.log(error)
+          alert("Wrong password!")
         });
     }
 
@@ -31,26 +31,31 @@ import "./css/login.css"
       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
       }).then((u)=>{console.log(u)})
       .catch((error) => {
-          console.log(error)
+          alert("ERROR")
         })
     }
     render() {
       return (
-         <div>
-           <h2>Welcome to Kakanmonsters admin site</h2>
-           <form>
-            <div className="form-group">
+         <div className="start">
+           <img src={require("./img/leaves.jpg")} alt="big green leaves" />
+           <form className="start-content">
+              <h2>Welcome to Kakanmonsters admin site</h2>
+            <div className="form-content">
+              <div className="form-group">
                <label htmlFor="exampleInputEmail1">Email address </label>
                <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+              </div>
+              <div className="passwords">
+                <label htmlFor="exampleInputPassword1">Password </label>
+                <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="exampleInputPassword1" placeholder="Password" />
+              </div>
             </div>
-            <div className="passwords">
-              <label htmlFor="exampleInputPassword1">Password </label>
-              <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="exampleInputPassword1" placeholder="Password" />
+            <div className="buttonform">
+              <button type="submit" onClick={this.login}>Let´s go</button>
+              <button onClick={this.signup}>Signup</button>
             </div>
-            <button type="submit" onClick={this.login}>I´m already an admin!</button>
-            <button onClick={this.signup} style={{marginLeft: '25px'}}>To signup, please enter email and password above!</button>
+              <p>To sign up, simply enter your email and password in the form and click signup</p>
           </form>
-          <img src="./img/animal1.jpg" />
          </div>
       )
     }
