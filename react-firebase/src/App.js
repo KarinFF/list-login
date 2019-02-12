@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router , Route, Link } from "react-router-dom"
 import firebase from './firebase'
 import Login from "./Login"
 import Home from "./Home"
+import Signup from "./Signup"
 
 class App extends Component {
   constructor() {
@@ -30,9 +32,12 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
      <div className="App">
        {this.state.user ?  (<Home />) : (<Login />)}
+         <Route path="/signup" component={Signup}/>
      </div>
+     </Router>
    )
 }
 }

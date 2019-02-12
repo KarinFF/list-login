@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 import firebase from './firebase'
 import "./css/login.css"
+import Signup from "./Signup"
 
   class Login extends Component {
     constructor(props) {
       super(props);
       this.login = this.login.bind(this);
       this.handleChange = this.handleChange.bind(this)
-      this.signup = this.signup.bind(this)
       this.state = {
         email: '',
         password: ''
@@ -24,15 +25,6 @@ import "./css/login.css"
       }).catch((error) => {
           alert("Wrong password!")
         });
-    }
-
-    signup(e){
-      e.preventDefault()
-      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-      }).then((u)=>{console.log(u)})
-      .catch((error) => {
-          alert("ERROR")
-        })
     }
     render() {
       return (
@@ -52,9 +44,8 @@ import "./css/login.css"
             </div>
             <div className="buttonform">
               <button type="submit" onClick={this.login}>Let´s go</button>
-              <button onClick={this.signup}>Signup</button>
+              <button><Link to="/signup"><h3>Not an admin yet? Signup here!</h3></Link></button>
             </div>
-              <p>To sign up, simply enter your email and password in the form and click signup</p>
           </form>
          </div>
       )
