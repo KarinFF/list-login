@@ -44,7 +44,7 @@ import Signup from "./Signup"
             </div>
             <div className="buttonform">
               <button type="submit" onClick={this.login}>Let´s go</button>
-              <button><Link to="/signup"><h3>Not an admin yet? Signup here!</h3></Link></button>
+              <button><Link to="/signup">Not an admin yet? Signup here!</Link></button>
             </div>
           </form>
          </div>

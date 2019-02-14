@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import firebase from './firebase'
+import  "./css/signup.css"
 
 class Signup extends Component {
   constructor(props) {
@@ -26,8 +27,8 @@ class Signup extends Component {
   }
   render() {
     return (
-       <div className="start">
-         <form className="start-content">
+       <div className="signup">
+         <form className="signup-content">
             <h2>Please signup here</h2>
           <div className="form-content">
             <div className="form-group">
