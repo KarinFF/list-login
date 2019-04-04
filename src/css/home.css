@@ -1,0 +1,33 @@
+body {
+background-color: #3c7952;
+}
+.signup-content {
+top: -100%;
+}
+
+.logoutbutton{
+float: right;
+
+}
+.header {
+  margin: 0;
+}
+
+h1 {
+font-size: 50px;
+background: #70a282;
+margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+color: #3c7952;
+}
+
+a:visited {
+  color: #15d45a;
+}

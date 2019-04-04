@@ -1,0 +1,23 @@
+
+h2{
+  font-size: 30px;
+  color: #193a19;
+}
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 17px;
+}
+
+.textstyle {
+  background: #70a282;
+  height: 200px;
+  width: 40%;
+  border: 1px solid grey;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 20px;
+  padding-top: 10px;
+}

@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import TableList from "./tablelist"
+import "./css/table.css"
 
 
 class Table extends Component {
@@ -22,7 +23,7 @@ class Table extends Component {
 render() {
     return (
          <div>
-          <h1>List of users</h1>
+          <h2>List of users</h2>
           {this.state.items.map((items) => {
               return <TableList
                  key={items.id}

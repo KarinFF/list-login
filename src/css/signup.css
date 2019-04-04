@@ -1,0 +1,30 @@
+input {
+  margin-left: 2px;
+}
+.form-group {
+  padding: 5px 0px 5px 0px;
+}
+
+.signup-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 65px;
+  border-radius: 10px;
+}
+
+
+.loginbutton {
+  float: left;
+  margin-left: -30px;
+  margin-top: -40px;
+}
+
+.signupbutton {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+}

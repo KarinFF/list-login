@@ -35,11 +35,11 @@ import Signup from "./Signup"
             <div className="form-content">
               <div className="form-group">
                <label htmlFor="exampleInputEmail1">Email address </label>
-               <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+               <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" />
               </div>
               <div className="passwords">
                 <label htmlFor="exampleInputPassword1">Password </label>
-                <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="exampleInputPassword1" placeholder="Password" />
+                <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="exampleInputPassword1"/>
               </div>
             </div>
             <div className="buttonform">

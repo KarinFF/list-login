@@ -6,9 +6,9 @@ class TableList extends React.Component {
     return (
 
       <div className="textstyle">
-        <p>Full name</p><h2>{this.props.name}</h2>
+        <p>Full name: {this.props.name}</p>
         <p>Username: {this.props.title}</p>
-        <p>Email</p><a href={"mailto:" + this.props.email}>{this.props.email}</a>
+        <p>Email: <a href={"mailto:" + this.props.email}>{this.props.email}</a></p>
       </div>
       )
     }

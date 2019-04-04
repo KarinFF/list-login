@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 import firebase from './firebase'
 import  "./css/signup.css"
 
@@ -29,6 +30,7 @@ class Signup extends Component {
     return (
        <div className="signup">
          <form className="signup-content">
+           <button className="loginbutton"><Link to="/login">Back to login</Link></button>
             <h2>Please signup here</h2>
           <div className="form-content">
             <div className="form-group">
@@ -41,7 +43,7 @@ class Signup extends Component {
             </div>
           </div>
           <div className="buttonform">
-            <button onClick={this.signup}>Signup</button>
+            <button className="signupbutton" onClick={this.signup}>Signup</button>
           </div>
         </form>
        </div>
