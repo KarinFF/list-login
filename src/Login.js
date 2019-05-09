@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import firebase from './firebase'
 import "./css/login.css"
-import Signup from "./Signup"
 
   class Login extends Component {
     constructor(props) {

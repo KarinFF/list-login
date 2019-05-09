@@ -6,17 +6,25 @@ top: -100%;
 }
 
 .logoutbutton{
-float: right;
-
+background-color: #b5332a;
+width: 60px;
+height: 35px;
+color: white;
+margin-right: 10px;
+margin-top: 10px;
+border-radius: 3px;
 }
 .header {
-  margin: 0;
+background: #70a282;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 }
 
 h1 {
 font-size: 50px;
-background: #70a282;
 margin: 0;
+padding-left: 5px;
 }
 
 a {
